@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits Research Brief - Complete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2332;
+            --indigo: #2d3e50;
+            --slate: #64748b;
+            --cream: #fdfcf9;
+            --gold: #d4af37;
+            --emerald: #10b981;
+            --amber: #f59e0b;
+            --coral: #f97316;
+            --sky: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 100%);
+            color: var(--cream);
+            padding: 4rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 20px) rotate(5deg); }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: -2rem auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--emerald);
+            animation: slideUp 0.6s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        .stat-card:nth-child(2) {
+            border-left-color: var(--amber);
+            animation-delay: 0.1s;
+        }
+
+        .stat-card:nth-child(3) {
+            border-left-color: var(--coral);
+            animation-delay: 0.2s;
+        }
+
+        .stat-card:nth-child(4) {
+            border-left-color: var(--sky);
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: var(--cream);
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-intro {
+            font-size: 1.125rem;
+            color: var(--slate);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        .agents-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .agent-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .agent-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .agent-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 100%);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .agent-card:nth-child(1) .agent-header {
+            background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+        }
+
+        .agent-card:nth-child(2) .agent-header {
+            background: linear-gradient(135deg, var(--amber) 0%, #d97706 100%);
+        }
+
+        .agent-card:nth-child(3) .agent-header {
+            background: linear-gradient(135deg, var(--coral) 0%, #ea580c 100%);
+        }
+
+        .agent-card:nth-child(4) .agent-header {
+            background: linear-gradient(135deg, var(--sky) 0%, #0284c7 100%);
+        }
+
+        .agent-card:nth-child(5) .agent-header {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .agent-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .agent-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .agent-card.expanded .agent-toggle {
+            transform: rotate(180deg);
+        }
+
+        .agent-content {
+            padding: 2.5rem;
+            display: none;
+        }
+
+        .agent-card.expanded .agent-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.375rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: var(--navy);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            color: var(--navy);
+        }
+
+        .findings-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .findings-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .findings-list li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet {
+            width: 8px;
+            height: 8px;
+            background: var(--emerald);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .quote-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--coral);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .quote-source {
+            font-size: 0.875rem;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .data-point {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1px solid #86efac;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        .data-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--emerald);
+        }
+
+        .data-label {
+            font-size: 0.875rem;
+            color: var(--slate);
+            margin-top: 0.25rem;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--emerald);
+        }
+
+        .insight-card.validated {
+            border-top-color: var(--emerald);
+        }
+
+        .insight-card.competitive {
+            border-top-color: var(--amber);
+        }
+
+        .insight-card.impact {
+            border-top-color: #8b5cf6;
+        }
+
+        .insight-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-card.competitive .insight-icon {
+            background: linear-gradient(135deg, var(--amber) 0%, #d97706 100%);
+        }
+
+        .insight-card.impact .insight-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .insight-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .insight-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .insight-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--slate);
+        }
+
+        .cta-section {
+            background: var(--cream);
+            border: 2px solid var(--navy);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: var(--emerald);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        p {
+            margin: 1rem 0;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .insight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-badge">Research Complete</div>
+            <h1>Credits Research Brief</h1>
+            <div class="subtitle">Customer Credits Feature Research | February 17, 2026</div>
+        </div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-number">897</div>
+            <div class="stat-label">Reforge Snippets Analyzed</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">Many Years</div>
+            <div class="stat-label">of Customer Requests</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5 Agents</div>
+            <div class="stat-label">Research Streams</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Demand Validated</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="nav-title">Navigation</div>
+            <ul class="nav-links">
+                <li><a href="#executive">Executive Summary</a></li>
+                <li><a href="#agents">Agent Findings</a></li>
+                <li><a href="#insights">Key Insights</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="executive" class="section">
+                <div class="section-header">
+                    <h2>Executive Summary</h2>
+                    <p class="section-intro">
+                        Customer credits is a validated, high-priority gap with consistent demand spanning many years. 897 Reforge snippets and multiple Facebook discussion threads document ongoing requests, while internal Jira tickets (XB-222, TSI-19) and Support-documented workarounds confirm this is a well-known pain point. The current state is that pros have no clean way to record and apply customer credits—they're forced into painful manual workarounds like tracking credits in customer notes (which get lost), creating fake unscheduled jobs (which clutter the system), or managing dual systems with QuickBooks (which don't sync). Support literally documents "no clean way" to do this. The result is what customers describe as "bookkeeping chaos": techs miss credits leading to angry customers, accounting reconciliation breaks down for large companies, and in at least one documented case, the gap creates churn risk.
+                    </p>
+                    <p class="section-intro" style="margin-top: 1rem;">
+                        The scope of this problem is significant. Pros need credits for overpayments (most common use case), service mistakes and compensation, referral programs, prepayments and deposits. Every workaround is either manual and error-prone, or requires external systems that don't integrate. The business impact extends beyond operational pain: pros cannot formalize referral programs (blocking customer acquisition strategy), QuickBooks integration creates credit memos that HCP can't manage (revenue/tax timing issues), and customers describe administrative burden that affects their willingness to stay on the platform. Competitively, this is table stakes—both ServiceTitan and Jobber have credits features, and customers transitioning from ServiceTitan explicitly expect this capability. This is not a new problem or a newly discovered gap; it's a long-standing, well-documented need that affects core workflows and competitive positioning.
+                    </p>
+                </div>
+            </section>
+
+            <section id="agents" class="section">
+                <div class="section-header">
+                    <h2>Research Agents</h2>
+                    <p class="section-intro">Five specialized agents conducted comprehensive research across customer feedback, competitive landscape, technical feasibility, and current state analysis. Click each section to expand full findings.</p>
+                </div>
+
+                <div class="agents-grid">
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 1: Customer Feedback & Sentiment</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Research Sources & Volume</h3>
+
+                            <div class="data-point">
+                                <div class="data-number">897</div>
+                                <div class="data-label">Reforge snippets with detailed pain points</div>
+                            </div>
+
+                            <div class="data-point" style="margin-left: 1rem;">
+                                <div class="data-number">6</div>
+                                <div class="data-label">Facebook threads (41+ comments) spanning many years</div>
+                            </div>
+
+                            <p><strong>Internal sources:</strong> Multiple Jira tickets (XB-222: "Give / save credits for our pros' customers", TSI-19: "Add overpayments/credits or deposits to customer account"), Support documentation, Confluence docs identifying the gap.</p>
+
+                            <h3>Sentiment Breakdown</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>40-50% Requesting feature</strong> - "please add this", "we need this capability"</div></li>
+                                <li><div class="bullet"></div><div><strong>30-40% Confused</strong> - "how do I do this?", "is there a way to..."</div></li>
+                                <li><div class="bullet"></div><div><strong>10-20% Frustrated</strong> - "this is causing problems", experiencing pain</div></li>
+                                <li><div class="bullet"></div><div><strong>10-15% Describing workarounds</strong> - "here's how we cope", manual processes</div></li>
+                            </ul>
+
+                            <p><strong>Scope assessment:</strong> VERY COMMON - identified as a top-tier demand feature. Multiple requests appearing across many years indicates this is not a niche need but a fundamental gap affecting broad customer base.</p>
+
+                            <h3>Top Use Cases (From Real Customer Feedback)</h3>
+
+                            <h4>1. Overpayments (MOST COMMON)</h4>
+                            <p><strong>Scenario:</strong> Customer pays more than invoice amount, pro wants to store the difference as credit for next visit.</p>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"We have couple customers that overpaid...Is there a way to apply credits in HCP without screwing up my sales figures?"</div>
+                                <div class="quote-source">Amy Blaine, Facebook</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"How do I apply a credit to an account that won't show up as income in quickbooks?"</div>
+                                <div class="quote-source">Doug Hunt, Facebook</div>
+                            </div>
+
+                            <p><strong>Frequency:</strong> Happens regularly across all service types. Customer pays $500, invoice is $450, need to store $50 for next service. Currently no clean way to track this.</p>
+
+                            <h4>2. Service Mistakes / Compensation</h4>
+                            <p><strong>Scenario:</strong> Service issue, damage during work, or customer dissatisfaction requiring compensation. Pro wants to give credit toward next service rather than refund.</p>
+
+                            <p><strong>Examples from research:</strong> Incomplete work, service damage, customer dissatisfaction, missed appointments, quality issues. Pro needs to offer credit to maintain relationship and encourage customer to use them again.</p>
+
+                            <p><strong>Why credits vs refunds:</strong> Credits encourage repeat business, keep customer engaged, demonstrate commitment to making things right. Refund ends the relationship.</p>
+
+                            <h4>3. Referral Credits</h4>
+                            <p><strong>Scenario:</strong> Customer refers a friend or neighbor, pro wants to give them credit as a thank you.</p>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"How are you handling applying credits to a customer's account when they earn a referral bonus or some other form of credit?"</div>
+                                <div class="quote-source">Caleb Wininger, Facebook (Feb 2025)</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"Is it possible to apply credits to clients accounts for things like referrals etc?"</div>
+                                <div class="quote-source">Texas Medley, Facebook (2018) - 14 comments, highest engagement</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"a built in affiliate feature would be awesome!"</div>
+                                <div class="quote-source">Jennifer Rex McCray, Facebook - 5 likes</div>
+                            </div>
+
+                            <p><strong>Strategic importance:</strong> Without ability to give and track referral credits, pros cannot formalize referral programs. This blocks customer acquisition strategies that rely on word-of-mouth incentives.</p>
+
+                            <h4>4. Prepayments / Deposits</h4>
+                            <p><strong>Scenario:</strong> Customer pays upfront before work is scheduled or completed. Pro needs to track this payment and apply it when the work happens.</p>
+
+                            <p><strong>From Confluence research:</strong> "Readout: Invoicing & AR Issues from Early Payments" documents revenue/tax timing mismatches when payment arrives before invoice is created. Membership/service plan payments that need to be applied to future work over time.</p>
+
+                            <p><strong>Example:</strong> Customer pays deposit for landscaping project in March, work happens in May. How to track that payment and apply it correctly without inflating March revenue?</p>
+
+                            <h4>5. Referral Credits</h4>
+                            <p><strong>Scenario:</strong> Customer refers a friend, pro wants to give credit as thank you.</p>
+
+                            <p><strong>Why it matters:</strong> Cannot formalize referral programs without ability to give and track credits. Blocks customer acquisition strategy.</p>
+
+                            <h3>Customer Pain Points (Direct Quotes)</h3>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"I am now looking at other software"</div>
+                                <div class="quote-source">Reforge customer - CHURN RISK</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"in Simple Terms this could piss the Customer off"</div>
+                                <div class="quote-source">Reforge customer - describing customer satisfaction risk</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"For a large company, this would be a major inefficiency and could cause internal control issues"</div>
+                                <div class="quote-source">Reforge customer - explaining enterprise impact</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"Every business issues credits. This should be standard accounting feature"</div>
+                                <div class="quote-source">Reforge customer - indicating this is table stakes</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"yeah just a general credit function is necessary"</div>
+                                <div class="quote-source">Caleb Wininger, Facebook (Feb 2025)</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"Notes get lost and a lot of times not looked at"</div>
+                                <div class="quote-source">Amy Tschida, Facebook - describing note-based workaround failure</div>
+                            </div>
+
+                            <h3>Current Workarounds (ALL PAINFUL)</h3>
+
+                            <h4>1. Customer Notes Method (MOST COMMON)</h4>
+                            <p><strong>How it works:</strong> Add credit amount to customer notes/profile, optionally tag with "CUSTOMER CREDIT", manually remember to apply when creating next invoice, apply as discount line item.</p>
+                            <p><strong>Pain points:</strong> Notes get lost, easy to forget, no tracking of balance over time, no audit trail, tech in field doesn't see it, customer gets angry when credit isn't applied.</p>
+
+                            <h4>2. Unscheduled Job Method</h4>
+                            <p><strong>How it works:</strong> Create fake unscheduled job, add line item equal to credit amount, apply when next service is scheduled.</p>
+                            <p><strong>Pain points:</strong> Clutters job system with fake jobs, confusing for reporting, shows up in analytics incorrectly, not actually a credit just a workaround.</p>
+
+                            <h4>3. Discount Line Item Method</h4>
+                            <p><strong>How it works:</strong> Create "Credit" line item in price reference, use negative numbers to apply as discount.</p>
+                            <p><strong>Pain points:</strong> Affects revenue reporting (shows as discount not credit application), requires existing service item to apply against, doesn't track true credit balance, accounting sees this wrong.</p>
+
+                            <h4>4. QuickBooks External Management</h4>
+                            <p><strong>How it works:</strong> Create credit memo in QB, track in QB not HCP, manually apply in QB after HCP invoice created.</p>
+                            <p><strong>Pain points:</strong> Dual systems - credit lives only in QB, no sync back to HCP, pros can't see credit balance in HCP, QB integration creates credit memos HCP can't manage, revenue/tax timing issues.</p>
+
+                            <h4>5. Manual Excel/Spreadsheet Tracking</h4>
+                            <p><strong>How it works:</strong> Track credits in external spreadsheet, cross-reference when creating invoices, manually apply as discount in HCP.</p>
+                            <p><strong>Pain points:</strong> Completely external to HCP, error-prone, no integration, time-consuming, easy to forget, multiple people need access to shared spreadsheet.</p>
+
+                            <h4>6. Physical Gift Cards</h4>
+                            <p><strong>How it works:</strong> Send vanilla gift cards with thank you notes, customer pays with card instead of service credit.</p>
+                            <p><strong>Pain points:</strong> Completely outside system, no tracking in HCP, cost of purchasing cards, customer could lose card, not actually a credit system.</p>
+
+                            <h3>Business Impact Documented</h3>
+
+                            <p><strong>Accounting chaos:</strong> Credits applied as discounts inflate sales figures, QB integration creates credits HCP can't manage, no way to apply credit without showing as income, internal control issues for large companies.</p>
+
+                            <p><strong>Operational issues:</strong> Techs forget about credits in notes → angry customers, manual tracking prone to errors, time spent managing workarounds, no audit trail.</p>
+
+                            <p><strong>Strategic blockers:</strong> Cannot formalize referral programs, cannot offer loyalty credits, cannot handle membership/service plan credits properly, limits growth strategies.</p>
+
+                            <p><strong>Churn risk:</strong> At least one documented customer considering switching software due to this gap, ServiceTitan transplants experience friction.</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 2: Direct Competitors</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>ServiceTitan: Most Sophisticated Implementation</h3>
+
+                            <p><strong>Feature name:</strong> "Available Credits (Unapplied Payments)"</p>
+
+                            <h4>Capabilities</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Credits stored as "Available Credits" on customer profile with high visibility</div></li>
+                                <li><div class="bullet"></div><div><strong>Auto-apply rules</strong> - Can set sophisticated rules by customer type, business unit, tags</div></li>
+                                <li><div class="bullet"></div><div>Manual application also supported - pro can override automatic behavior</div></li>
+                                <li><div class="bullet"></div><div>Multiple credit creation methods - overpayments, manual entry, adjustments</div></li>
+                                <li><div class="bullet"></div><div>Full audit trail of all credit transactions</div></li>
+                                <li><div class="bullet"></div><div>Prominent display on customer profile - impossible to miss</div></li>
+                            </ul>
+
+                            <h4>What They Do Well</h4>
+                            <p>ServiceTitan has made credits a first-class feature. Pros can see credit balances immediately when viewing a customer, system can automatically apply credits based on business rules, and there's full tracking of credit lifecycle from creation to application.</p>
+
+                            <p><strong>Key insight:</strong> ServiceTitan transplants EXPECT this level of functionality. When they move to HCP and find this missing, it creates immediate friction and questions about platform capabilities.</p>
+
+                            <h4>Documented Gaps</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Referral credits handled via workarounds (no dedicated referral feature)</div></li>
+                                <li><div class="bullet"></div><div>No partial credit application documented in research</div></li>
+                                <li><div class="bullet"></div><div>Complex rule system may be overkill for some users - lots of configuration</div></li>
+                            </ul>
+
+                            <h3>Jobber: Simple, Straightforward Approach</h3>
+
+                            <p><strong>Feature name:</strong> Customer "deposits" in Billing History Box</p>
+
+                            <h4>Capabilities</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Simple balance-based approach (negative balance = credit)</div></li>
+                                <li><div class="bullet"></div><div>Automatic application in quote-to-invoice workflow</div></li>
+                                <li><div class="bullet"></div><div>Manual application for other scenarios</div></li>
+                                <li><div class="bullet"></div><div>Gift cards mentioned as explicit use case</div></li>
+                                <li><div class="bullet"></div><div>Straightforward UX - easy to understand</div></li>
+                            </ul>
+
+                            <h4>What They Do Well</h4>
+                            <p>Jobber keeps it simple. Not as sophisticated as ServiceTitan, but covers core use cases without overwhelming users with options. The balance-based model is intuitive - if customer has negative balance, they have credit.</p>
+
+                            <p><strong>Key insight:</strong> Even smaller competitors like Jobber have basic credits. This signals that credits are baseline functionality, not advanced features only large platforms provide.</p>
+
+                            <h4>Documented Gaps</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Limited automation compared to ServiceTitan</div></li>
+                                <li><div class="bullet"></div><div>No complex rules engine</div></li>
+                                <li><div class="bullet"></div><div>No partial credit application documented</div></li>
+                                <li><div class="bullet"></div><div>Automatic only in specific quote-to-invoice workflow, manual elsewhere</div></li>
+                            </ul>
+
+                            <h3>Service Fusion: NO Credits Feature</h3>
+
+                            <p><strong>From their documentation:</strong></p>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"Credit Memos are not possible"</div>
+                                <div class="quote-source">Service Fusion official documentation</div>
+                            </div>
+
+                            <h4>Current State</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>No native credits functionality at all</div></li>
+                                <li><div class="bullet"></div><div>Documentation explicitly states credits aren't possible</div></li>
+                                <li><div class="bullet"></div><div>Must use external accounting software to manage</div></li>
+                                <li><div class="bullet"></div><div>Customers track manually outside Service Fusion</div></li>
+                            </ul>
+
+                            <p><strong>Key insight:</strong> This is a significant competitive weakness for Service Fusion. Represents an opportunity for HCP to be better than a key competitor in this dimension.</p>
+
+                            <h3>Competitive Summary</h3>
+
+                            <p><strong>Market leader (ServiceTitan):</strong> Has robust, sophisticated credits system with automation. Sets customer expectations.</p>
+
+                            <p><strong>Mid-market (Jobber):</strong> Has basic credits functionality. Even small competitors provide this.</p>
+
+                            <p><strong>Key competitor (Service Fusion):</strong> Has nothing. Clear competitive gap we could exploit.</p>
+
+                            <p><strong>Implication:</strong> Credits are table stakes functionality. Both market leaders and smaller competitors have at least basic versions. Service Fusion's lack of this is a known weakness.</p>
+
+                            <p><strong>Files available:</strong> servicetitan.md, jobber.md, service-fusion.md, competitive-flow.html (interactive comparison)</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 3: Payment Processors</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Stripe: Only Processor with Native Support</h3>
+
+                            <p><strong>Feature:</strong> Customer Balance API</p>
+
+                            <h4>Capabilities</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>Native Customer Balance feature</strong> - built into Stripe platform</div></li>
+                                <li><div class="bullet"></div><div>Automatic application to invoices</div></li>
+                                <li><div class="bullet"></div><div>Full API support - create, update, retrieve, list credit transactions</div></li>
+                                <li><div class="bullet"></div><div>Immutable transaction ledger for audit trail</div></li>
+                                <li><div class="bullet"></div><div>Dashboard management available in Stripe UI</div></li>
+                                <li><div class="bullet"></div><div>Tracks credit balance per customer</div></li>
+                                <li><div class="bullet"></div><div>Can add to balance, deduct from balance, view history</div></li>
+                            </ul>
+
+                            <h4>How It Works</h4>
+                            <p>Stripe maintains a balance field on each customer object. When you add credits to a customer's balance, Stripe automatically applies that balance to their next invoice. The system keeps an immutable ledger of all balance transactions for accounting purposes.</p>
+
+                            <p><strong>API endpoints available:</strong> Create customer balance transaction, retrieve balance, list all transactions, automatic application to finalized invoices.</p>
+
+                            <h4>Limitations</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Automatic application only - balance applies to next invoice automatically, no user control</div></li>
+                                <li><div class="bullet"></div><div>Cannot choose which invoice to apply to</div></li>
+                                <li><div class="bullet"></div><div>Cannot choose NOT to apply balance if one exists</div></li>
+                                <li><div class="bullet"></div><div>No partial amount control - applies full balance up to invoice amount</div></li>
+                            </ul>
+
+                            <p><strong>Implication:</strong> Stripe provides technical foundation (storage, transaction ledger, API) but automatic behavior means business logic must be managed in HCP layer to give users control over when/how credits apply.</p>
+
+                            <h3>Square: No Native Credits</h3>
+
+                            <p><strong>Current state:</strong> NO native customer credit functionality</p>
+
+                            <h4>History</h4>
+                            <p>Feature requested by users since 2016. Never implemented by Square. Represents a longstanding gap in their platform.</p>
+
+                            <h4>Available Workarounds (All Have Major Drawbacks)</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>Gift Cards API:</strong> Can be misused for credits, but has 2% load fee, $2K limit per card, not designed for this use case</div></li>
+                                <li><div class="bullet"></div><div><strong>Loyalty API:</strong> Points only, not monetary value - doesn't work for actual credits</div></li>
+                                <li><div class="bullet"></div><div><strong>Third-party apps:</strong> Require monthly subscription fees, separate system to manage</div></li>
+                                <li><div class="bullet"></div><div><strong>Custom external build:</strong> No Square integration, have to build entire system yourself</div></li>
+                            </ul>
+
+                            <p><strong>Key insight:</strong> Square is not a viable choice for credit functionality. Would require building everything custom with no platform support.</p>
+
+                            <h3>PayPal: No Merchant-Managed Credits</h3>
+
+                            <p><strong>Current state:</strong> NO merchant-managed customer credit system</p>
+
+                            <h4>What Exists</h4>
+                            <p>PayPal has customer-controlled PayPal Balance (customer's wallet) but merchants cannot manage it. This is fundamentally different from merchant-issued credits.</p>
+
+                            <h4>What's Missing</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Merchants cannot add credits to customer accounts</div></li>
+                                <li><div class="bullet"></div><div>No balance tracking for merchant-issued credits</div></li>
+                                <li><div class="bullet"></div><div>Can issue refunds but no credit storage</div></li>
+                                <li><div class="bullet"></div><div>Braintree (PayPal's advanced processor) also lacks customer credit features</div></li>
+                            </ul>
+
+                            <p><strong>Workaround:</strong> Would require external system + manual application. Not integrated with PayPal at all.</p>
+
+                            <h3>Payment Processor Summary</h3>
+
+                            <div class="quote-box" style="border-left-color: var(--amber);">
+                                <div class="quote-text" style="font-style: normal; font-weight: 600;">If customer credits are a critical requirement, Stripe is the only viable choice among major payment processors.</div>
+                            </div>
+
+                            <p><strong>Stripe:</strong> Native support, full API, automatic application, immutable ledger. Provides technical foundation.</p>
+
+                            <p><strong>Square:</strong> Nothing native. Requested since 2016, never built. Workarounds all cost money or don't work properly.</p>
+
+                            <p><strong>PayPal:</strong> No merchant-managed credits. Customer wallet exists but merchant can't control it.</p>
+
+                            <p><strong>Technical implication:</strong> Stripe Customer Balance provides the storage and transaction layer. HCP must build business logic on top to provide user control, partial application, multiple credit types, and other features customers need.</p>
+
+                            <p><strong>Files available:</strong> stripe.md, square.md, paypal.md, processor-flow.html (interactive comparison)</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 4: Consumer Platforms</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Research Scope</h3>
+                            <p>Examined how major ecommerce platforms (Amazon, Shopify, Walmart, Etsy, Best Buy) handle customer credits at checkout. Focus: understanding UX patterns for credit application, particularly automatic vs opt-in approaches.</p>
+
+                            <p><strong>Note:</strong> These are consumer platforms, not direct competitors, but patterns are informative for understanding credit application UX and identifying gaps that could be B2B differentiators.</p>
+
+                            <h3>The Industry is Split: Automatic vs Opt-In</h3>
+
+                            <h4>Automatic Application (Opt-Out Pattern)</h4>
+                            <p><strong>Who uses this:</strong> Amazon, Walmart Pay (mobile)</p>
+                            <p><strong>How it works:</strong> Credits are applied by default to every purchase. User must actively decline/uncheck to save credits for later.</p>
+                            <p><strong>Pros:</strong> Zero friction for majority who want to use credits, fast checkout.</p>
+                            <p><strong>Cons:</strong> Easy to accidentally spend credits, no persistent "never apply automatically" preference, user must opt-out on every single transaction.</p>
+
+                            <h4>Manual Application (Opt-In Pattern)</h4>
+                            <p><strong>Who uses this:</strong> Shopify, Walmart web, Etsy, Best Buy</p>
+                            <p><strong>How it works:</strong> User must actively click button or check box to apply credits. Credits are NOT applied by default.</p>
+                            <p><strong>Pros:</strong> Full user control, no accidental spending, easy to save credits for later (just don't click button).</p>
+                            <p><strong>Cons:</strong> Extra step required, risk of forgotten credits, higher cognitive load.</p>
+
+                            <h3>Platform-Specific Findings</h3>
+
+                            <h4>Amazon: Aggressive Automatic</h4>
+                            <p><strong>Pattern:</strong> Gift card balance and promotional credits automatically apply to every order. User sees checkbox PRE-CHECKED to use balance, must actively uncheck to save it.</p>
+                            <p><strong>Why this pattern:</strong> Amazon wants customers to spend balance quickly. High-frequency purchases mean automatic application usually aligns with customer intent.</p>
+
+                            <h4>Shopify: Explicit Opt-In</h4>
+                            <p><strong>Pattern:</strong> "Apply store credit" button at checkout. Credit balance shown clearly but NOT applied unless customer clicks button.</p>
+                            <p><strong>Critical limitation:</strong> Can only apply FULL balance, not partial. If you have $50 credit and $30 order, you can't choose to use just $30 and save $20.</p>
+
+                            <h4>Walmart: Hybrid Approach</h4>
+                            <p><strong>Web:</strong> Opt-in - user selects gift card as payment method manually.</p>
+                            <p><strong>Walmart Pay (mobile):</strong> Automatic - gift cards "used first by default."</p>
+                            <p><strong>Unique feature:</strong> Can stack up to 5 gift cards per order (only platform that allows multiple credit sources).</p>
+
+                            <h4>Etsy: Opt-In with Constraints</h4>
+                            <p><strong>Pattern:</strong> Unchecked checkbox at checkout. Always visible but requires explicit action.</p>
+                            <p><strong>Marketplace limitations:</strong> Not all sellers accept Etsy credit, cannot combine with Apple Pay or Google Pay (major friction point).</p>
+
+                            <h4>Best Buy: Opt-In with Expiration</h4>
+                            <p><strong>Pattern:</strong> Manual application required, both online and in-store.</p>
+                            <p><strong>Unique characteristic:</strong> Credits expire after 60 days (only platform with expiring credits). Creates urgency but also risk of loss.</p>
+                            <p><strong>In-store issue:</strong> Cashier doesn't automatically see/offer rewards certificates - customer must remember and ask.</p>
+
+                            <h3>CRITICAL FINDING: Universal Limitations</h3>
+
+                            <p>After researching Amazon, Shopify, Walmart, Etsy, Best Buy, and Stripe, a clear pattern emerged:</p>
+
+                            <div class="quote-box" style="border-left-color: var(--coral);">
+                                <div class="quote-text" style="font-style: normal; font-weight: 600;">NOBODY does partial credit application.</div>
+                                <div class="quote-source">Cannot use $20 of a $50 credit balance. It's all-or-nothing for every platform researched.</div>
+                            </div>
+
+                            <div class="quote-box" style="border-left-color: var(--coral);">
+                                <div class="quote-text" style="font-style: normal; font-weight: 600;">NOBODY has user preference settings.</div>
+                                <div class="quote-source">No "always apply credits" or "never apply credits" or "ask me each time" options on any platform.</div>
+                            </div>
+
+                            <div class="quote-box" style="border-left-color: var(--coral);">
+                                <div class="quote-text" style="font-style: normal; font-weight: 600;">NOBODY has invoice-specific control.</div>
+                                <div class="quote-source">Stripe applies to next invoice only (can't choose which one). Others apply to current checkout only.</div>
+                            </div>
+
+                            <h3>What This Means</h3>
+
+                            <p><strong>For consumers:</strong> These limitations might be acceptable because most consumer purchases are impulse-driven and high-frequency. If you accidentally use a credit, you'll make another purchase soon anyway.</p>
+
+                            <p><strong>For B2B/service businesses:</strong> These limitations are problematic. Service businesses have:</p>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Lower purchase frequency - next job might be weeks or months away</div></li>
+                                <li><div class="bullet"></div><div>Variable job sizes - might want to use $200 of $500 credit on small job, save rest for larger project</div></li>
+                                <li><div class="bullet"></div><div>Strategic credit management - credits tied to specific job types or seasons</div></li>
+                                <li><div class="bullet"></div><div>Accounting requirements - need clear control over when credits apply for proper revenue recognition</div></li>
+                            </ul>
+
+                            <h3>Key Takeaways from Consumer Research</h3>
+
+                            <p><strong>1. Automatic vs opt-in is split:</strong> No consensus in industry on which pattern is better. Context matters (purchase frequency, transaction size, customer sophistication).</p>
+
+                            <p><strong>2. Partial credit application is an unsolved problem:</strong> No consumer platform offers this, yet it's clearly valuable for B2B contexts where credit amounts and job sizes vary widely.</p>
+
+                            <p><strong>3. User preferences are missing everywhere:</strong> Every platform forces one-size-fits-all approach. Different customers have different preferences, but no platform accommodates this.</p>
+
+                            <p><strong>4. Mobile wallet integration is challenging:</strong> Etsy can't combine credits with Apple Pay/Google Pay. Represents technical challenge that may affect customer experience.</p>
+
+                            <p><strong>5. Credit expiration is rare:</strong> Only Best Buy (loyalty/rewards context) expires credits. For core account credits (overpayments, service recovery), expiration would likely create negative sentiment.</p>
+
+                            <p><strong>Files available:</strong> README.md (630 lines comprehensive analysis), QUICK-REFERENCE.md, amazon.md, shopify.md, walmart.md, etsy-bestbuy.md, stripe-implementation.md</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 5: Current State at HCP</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>What HCP Offers Today: Nothing Native</h3>
+
+                            <p>From staging environment exploration and internal documentation review:</p>
+
+                            <h4>Credits Feature Status</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>❌ <strong>No credit balance field</strong> on customer profile</div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>No credit application option</strong> on invoices or at payment</div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>No credit creation workflow</strong> for pros to add credits</div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>No credit history or audit trail</strong></div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>No integration with QB credit memos</strong></div></li>
+                            </ul>
+
+                            <h4>What DOES Exist (Could Build On)</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>✅ <strong>"Outstanding balance" field</strong> on customer profile (but for UNPAID invoices, not credits)</div></li>
+                                <li><div class="bullet"></div><div>✅ <strong>Payment method storage</strong> exists and works</div></li>
+                                <li><div class="bullet"></div><div>✅ <strong>Invoice payment flow</strong> exists with multiple payment methods</div></li>
+                                <li><div class="bullet"></div><div>✅ <strong>Private notes section</strong> exists (where pros currently track credits manually)</div></li>
+                                <li><div class="bullet"></div><div>✅ <strong>Customer profile tabs</strong> structure could accommodate new credit section</div></li>
+                            </ul>
+
+                            <h3>The Gap (From Support Documentation)</h3>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"No clean way"</div>
+                                <div class="quote-source">HCP Support documentation - describing how to handle customer credits</div>
+                            </div>
+
+                            <div class="quote-box">
+                                <div class="quote-text">"HCP currently lacks a mechanism to record and apply overpayments or advance payments as customer credits"</div>
+                                <div class="quote-source">Confluence: "Payment handling limitations and QuickBooks integration issues in Housecall Pro"</div>
+                            </div>
+
+                            <h3>Internal Documentation (This is Not New)</h3>
+
+                            <h4>Jira Tickets</h4>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>XB-222:</strong> "Give / save credits for our pros' customers" (Status: To Do)</div></li>
+                                <li><div class="bullet"></div><div><strong>TSI-19:</strong> "Add overpayments/credits or deposits to customer account"</div></li>
+                                <li><div class="bullet"></div><div><strong>STHC-2620:</strong> Service plan overpayment scenario requiring credit application</div></li>
+                            </ul>
+
+                            <h4>Confluence Documentation</h4>
+                            <p><strong>"How to apply credits to a customer who overpaid for services rendered to apply for their next visit"</strong> - Support has documented workarounds, confirming this is a common enough ask to warrant official documentation.</p>
+
+                            <p><strong>"Payment handling limitations and QuickBooks integration issues in Housecall Pro"</strong> - Platform team has identified this gap and even recommended: "Introduce Native Credit Balance Support"</p>
+
+                            <p><strong>"Readout: Invoicing & AR Issues from Early Payments"</strong> - Documents revenue/tax timing problems that credits system could help solve</p>
+
+                            <h3>Documented Workarounds (From Support)</h3>
+
+                            <h4>1. Customer Notes with CUSTOMER CREDIT Tag</h4>
+                            <p><strong>Official Support workaround:</strong> Add credit amount to customer notes, optionally tag with "CUSTOMER CREDIT" for searchability, manually remember to apply.</p>
+                            <p><strong>Reality:</strong> Notes get lost, techs in field don't see them, easy to forget, no balance tracking, no history.</p>
+
+                            <h4>2. Unscheduled Jobs with Credit Line Item</h4>
+                            <p><strong>Official Support workaround:</strong> Create unscheduled job, add line item equal to credit, apply when next service scheduled.</p>
+                            <p><strong>Reality:</strong> Fake jobs clutter system, confusing for reporting, shows in analytics incorrectly, job list gets messy.</p>
+
+                            <h4>3. Manual Tracking in Excel/Notes</h4>
+                            <p><strong>What pros do:</strong> Track credits in spreadsheet or external notes, manually check before creating invoice, apply as discount.</p>
+                            <p><strong>Reality:</strong> Completely disconnected from HCP, error-prone, time-consuming, requires discipline, easy to forget.</p>
+
+                            <h4>4. Apply as Discount on Next Invoice</h4>
+                            <p><strong>What pros do:</strong> When they remember credit exists, add discount line item for that amount on next invoice.</p>
+                            <p><strong>Reality:</strong> Affects revenue reporting (looks like discount not credit), no tracking of original credit, accounting sees this wrong, QB sync issues.</p>
+
+                            <h4>5. QuickBooks External Management</h4>
+                            <p><strong>What pros do:</strong> Create credit memo in QB, track there, manually coordinate with HCP invoices.</p>
+                            <p><strong>Reality:</strong> Dual systems, QB creates credit memos HCP can't see or manage, pros can't see balance in HCP, revenue/tax timing mismatches, broken integration.</p>
+
+                            <h3>QuickBooks Integration Pain (Known Issue)</h3>
+
+                            <p>From internal documentation, QB integration creates specific problems:</p>
+
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>Revenue/tax timing mismatches:</strong> When payment arrives before invoice, QB and HCP don't agree on when revenue should be recognized</div></li>
+                                <li><div class="bullet"></div><div><strong>QB creates credit memos HCP can't manage:</strong> QB has native credit memo object, HCP has no equivalent, so credits created in QB don't sync to HCP</div></li>
+                                <li><div class="bullet"></div><div><strong>No bidirectional sync:</strong> Changes in one system don't reflect in the other</div></li>
+                                <li><div class="bullet"></div><div><strong>Internal control issues for large companies:</strong> Accounting team works in QB, operations team works in HCP, credits must be tracked in both places manually</div></li>
+                            </ul>
+
+                            <h3>Real-World Use Case from Jira</h3>
+
+                            <p><strong>STHC-2620 scenario:</strong> Tech charges customer full year of maintenance agreement as a single job line item. Customer pays it. No actual service plan object was set up. Pro then wants to apply this amount as a credit to the actual monthly-priced service plan and also recognize that customers with a plan get discounts on jobs.</p>
+
+                            <p><strong>Current state:</strong> No way to handle this properly. Money is received, but there's no mechanism to store it as credit and apply over time to monthly service charges.</p>
+
+                            <h3>Key Findings Summary</h3>
+
+                            <p><strong>1. This is not a new request:</strong> Multiple Jira tickets exist (some in To Do status for unknown duration), Support has documented workarounds, Confluence docs identify the gap.</p>
+
+                            <p><strong>2. Support has literally documented "no clean way":</strong> When your own Support team documents that there's no good solution, that's a clear product gap signal.</p>
+
+                            <p><strong>3. QuickBooks integration is broken for credits:</strong> QB has credit memos, HCP doesn't, no sync, causes accounting problems especially for large customers.</p>
+
+                            <p><strong>4. Infrastructure exists to build on:</strong> Customer profiles, payment methods, invoice flows all exist. Credits would be additive, not requiring full rebuild.</p>
+
+                            <p><strong>5. This predates current research:</strong> Facebook posts from 2018, internal Jira tickets of unknown age, Support documentation already exists. This is a long-standing, validated gap, not newly discovered.</p>
+
+                            <p><strong>Files available:</strong> current-capabilities.md, confluence-jira-research.md, staging screenshots</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="insights" class="section">
+                <div class="section-header">
+                    <h2>Key Insights</h2>
+                    <p class="section-intro">Three critical insights emerge from the complete research picture.</p>
+                </div>
+
+                <div class="insight-grid">
+                    <div class="insight-card validated">
+                        <div class="insight-icon">✓</div>
+                        <h3>Demand is Validated</h3>
+                        <ul>
+                            <li>897 Reforge snippets with detailed pain points</li>
+                            <li>Multiple Facebook threads spanning many years (2018-2025)</li>
+                            <li>Multiple internal Jira tickets (XB-222, TSI-19)</li>
+                            <li>Support has documented "no clean way" to handle this</li>
+                            <li>ServiceMaster (Franchise) has asked for this</li>
+                            <li>Neighborly (Franchise) has asked for this</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card competitive">
+                        <div class="insight-icon">⚔</div>
+                        <h3>Competitive Pressure</h3>
+                        <ul>
+                            <li>ServiceTitan has robust system with auto-apply rules</li>
+                            <li>Jobber has basic deposits model</li>
+                            <li>Service Fusion doesn't have it at all</li>
+                            <li>ServiceTitan transplants explicitly expect this</li>
+                            <li>This is table stakes, not innovation</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card impact">
+                        <div class="insight-icon">📊</div>
+                        <h3>Business Impact is Clear</h3>
+                        <ul>
+                            <li>Accounting reconciliation issues (especially large companies)</li>
+                            <li>Customer satisfaction risk (missed credits → angry customers)</li>
+                            <li>Administrative burden (manual tracking, dual systems)</li>
+                            <li>QB integration conflicts (credits don't sync)</li>
+                            <li>Churn risk (documented case considering switching)</li>
+                            <li>Blocks referral programs (customer acquisition strategy)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Research Complete</h2>
+                <p>Five research streams completed. Customer demand validated. Competitive context clear. Business impact documented.</p>
+                <div class="cta-badges">
+                    <span class="badge">✓ Customer Demand VALIDATED</span>
+                    <span class="badge">✓ Competitive Context CLEAR</span>
+                    <span class="badge">✓ Business Impact DOCUMENTED</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Agent card expansion
+        document.querySelectorAll('.agent-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.closest('.agent-card');
+                card.classList.toggle('expanded');
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Expand first agent by default
+        document.querySelector('.agent-card').classList.add('expanded');
+    </script>
+</body>
+</html>
