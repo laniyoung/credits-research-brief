@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits Research Brief - Complete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2332;
+            --indigo: #2d3e50;
+            --slate: #64748b;
+            --cream: #fdfcf9;
+            --gold: #d4af37;
+            --emerald: #10b981;
+            --amber: #f59e0b;
+            --coral: #f97316;
+            --sky: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 100%);
+            color: var(--cream);
+            padding: 4rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 20px) rotate(5deg); }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: -2rem auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--emerald);
+            animation: slideUp 0.6s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        .stat-card:nth-child(2) {
+            border-left-color: var(--amber);
+            animation-delay: 0.1s;
+        }
+
+        .stat-card:nth-child(3) {
+            border-left-color: var(--coral);
+            animation-delay: 0.2s;
+        }
+
+        .stat-card:nth-child(4) {
+            border-left-color: var(--sky);
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: var(--cream);
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-intro {
+            font-size: 1.125rem;
+            color: var(--slate);
+            max-width: 800px;
+        }
+
+        .agents-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .agent-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .agent-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .agent-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 100%);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .agent-card:nth-child(1) .agent-header {
+            background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+        }
+
+        .agent-card:nth-child(2) .agent-header {
+            background: linear-gradient(135deg, var(--amber) 0%, #d97706 100%);
+        }
+
+        .agent-card:nth-child(3) .agent-header {
+            background: linear-gradient(135deg, var(--coral) 0%, #ea580c 100%);
+        }
+
+        .agent-card:nth-child(4) .agent-header {
+            background: linear-gradient(135deg, var(--sky) 0%, #0284c7 100%);
+        }
+
+        .agent-card:nth-child(5) .agent-header {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .agent-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .agent-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .agent-card.expanded .agent-toggle {
+            transform: rotate(180deg);
+        }
+
+        .agent-content {
+            padding: 2rem;
+            display: none;
+        }
+
+        .agent-card.expanded .agent-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .findings-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .findings-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .findings-list li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet {
+            width: 8px;
+            height: 8px;
+            background: var(--emerald);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--emerald);
+            position: relative;
+        }
+
+        .insight-card.validated {
+            border-top-color: var(--emerald);
+        }
+
+        .insight-card.competitive {
+            border-top-color: var(--amber);
+        }
+
+        .insight-card.technical {
+            border-top-color: var(--sky);
+        }
+
+        .insight-card.opportunity {
+            border-top-color: var(--coral);
+        }
+
+        .insight-card.impact {
+            border-top-color: #8b5cf6;
+        }
+
+        .insight-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-card.competitive .insight-icon {
+            background: linear-gradient(135deg, var(--amber) 0%, #d97706 100%);
+        }
+
+        .insight-card.technical .insight-icon {
+            background: linear-gradient(135deg, var(--sky) 0%, #0284c7 100%);
+        }
+
+        .insight-card.opportunity .insight-icon {
+            background: linear-gradient(135deg, var(--coral) 0%, #ea580c 100%);
+        }
+
+        .insight-card.impact .insight-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .insight-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .insight-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .insight-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--slate);
+        }
+
+        .recommendations {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+
+        .recommendations h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .rec-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .rec-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .rec-item h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .rec-item p, .rec-item ul {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .rec-item ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .rec-item li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .rec-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .cta-section {
+            background: var(--cream);
+            border: 2px solid var(--navy);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: var(--emerald);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .insight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-badge">Research Complete</div>
+            <h1>Credits Research Brief</h1>
+            <div class="subtitle">Customer Credits Feature Research | February 17, 2026</div>
+        </div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-number">897</div>
+            <div class="stat-label">Reforge Snippets Analyzed</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">Many Years</div>
+            <div class="stat-label">of Customer Requests</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5 Agents</div>
+            <div class="stat-label">Research Streams</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Demand Validated</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="nav-title">Navigation</div>
+            <ul class="nav-links">
+                <li><a href="#executive">Executive Summary</a></li>
+                <li><a href="#agents">Agent Findings</a></li>
+                <li><a href="#insights">Key Insights</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#next-steps">Next Steps</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="executive" class="section">
+                <div class="section-header">
+                    <h2>Executive Summary</h2>
+                    <p class="section-intro">
+                        Customer credits is a validated, high-priority gap with consistent demand spanning many years. 897 Reforge snippets and multiple Facebook discussion threads document ongoing requests, while internal Jira tickets (XB-222, TSI-19) and Support-documented workarounds confirm this is a well-known pain point. The current state is that pros have no clean way to record and apply customer credits—they're forced into painful manual workarounds like tracking credits in customer notes (which get lost), creating fake unscheduled jobs (which clutter the system), or managing dual systems with QuickBooks (which don't sync). Support literally documents "no clean way" to do this. The result is what customers describe as "bookkeeping chaos": techs miss credits leading to angry customers, accounting reconciliation breaks down for large companies, and in at least one documented case, the gap creates churn risk.
+                    </p>
+                    <p class="section-intro" style="margin-top: 1rem;">
+                        The scope of this problem is significant. Pros need credits for overpayments (most common use case), service mistakes and compensation, referral programs, prepayments and deposits, and bulk B2B payments. Every workaround is either manual and error-prone, or requires external systems that don't integrate. The business impact extends beyond operational pain: pros cannot formalize referral programs (blocking customer acquisition strategy), QuickBooks integration creates credit memos that HCP can't manage (revenue/tax timing issues), and customers describe administrative burden that affects their willingness to stay on the platform. Competitively, this is table stakes—both ServiceTitan and Jobber have credits features, and customers transitioning from ServiceTitan explicitly expect this capability. This is not a new problem or a newly discovered gap; it's a long-standing, well-documented need that affects core workflows and competitive positioning.
+                    </p>
+                </div>
+            </section>
+
+            <section id="agents" class="section">
+                <div class="section-header">
+                    <h2>Research Agents</h2>
+                    <p class="section-intro">Five specialized agents conducted comprehensive research across customer feedback, competitive landscape, technical feasibility, and current state analysis.</p>
+                </div>
+
+                <div class="agents-grid">
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 1: Customer Feedback & Sentiment</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Key Findings</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>897 Reforge snippets</strong> with detailed pain points</div></li>
+                                <li><div class="bullet"></div><div><strong>6 Facebook threads (41+ comments)</strong> spanning 7 years (2018-2025)</div></li>
+                                <li><div class="bullet"></div><div><strong>Sentiment:</strong> 40-50% requesting feature, 30-40% confused how to do it, 10-20% frustrated</div></li>
+                                <li><div class="bullet"></div><div><strong>Scope:</strong> VERY COMMON - top-tier demand feature</div></li>
+                                <li><div class="bullet"></div><div><strong>Business Impact:</strong> Accounting chaos, churn risk, customer sat issues, can't do referral programs</div></li>
+                            </ul>
+
+                            <h3>Top Use Cases</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Overpayments (most common)</div></li>
+                                <li><div class="bullet"></div><div>Bulk contractor/B2B payments</div></li>
+                                <li><div class="bullet"></div><div>Service mistakes/damages</div></li>
+                                <li><div class="bullet"></div><div>Prepayments/deposits</div></li>
+                                <li><div class="bullet"></div><div>Referral credits</div></li>
+                            </ul>
+
+                            <h3>Current Workarounds (ALL PAINFUL)</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Customer notes (get lost)</div></li>
+                                <li><div class="bullet"></div><div>Unscheduled jobs (clutter system)</div></li>
+                                <li><div class="bullet"></div><div>Discount line items (affects reporting)</div></li>
+                                <li><div class="bullet"></div><div>External QB management (dual systems)</div></li>
+                                <li><div class="bullet"></div><div>Physical gift cards (no tracking)</div></li>
+                                <li><div class="bullet"></div><div>Manual spreadsheets (error-prone)</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 2: Direct Competitors</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Key Findings</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>ServiceTitan:</strong> Robust "Available Credits (Unapplied Payments)" with auto-apply rules</div></li>
+                                <li><div class="bullet"></div><div><strong>Jobber:</strong> Simple "deposits" model, automatic in quote-to-invoice workflow</div></li>
+                                <li><div class="bullet"></div><div><strong>Service Fusion:</strong> NO credits feature at all - massive competitive gap for them</div></li>
+                            </ul>
+
+                            <h3>Opportunity</h3>
+                            <p>If HCP matches ServiceTitan capabilities with Jobber simplicity, you beat Service Fusion and have parity with market leaders.</p>
+
+                            <p style="margin-top: 1rem;"><strong>Interactive Comparison:</strong> competitive-flow.html</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 3: Payment Processors</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Key Findings</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>Stripe:</strong> ONLY processor with native, robust Customer Balance features (automatic application, full API)</div></li>
+                                <li><div class="bullet"></div><div><strong>Square:</strong> NO native credits (requested since 2016, never built - workarounds all have major drawbacks)</div></li>
+                                <li><div class="bullet"></div><div><strong>PayPal:</strong> NO merchant-managed credits (only customer wallet)</div></li>
+                            </ul>
+
+                            <h3>Bottom Line</h3>
+                            <p>Stripe is the only viable choice if credits are critical. Use Stripe Customer Balance as storage layer, manage business logic in HCP.</p>
+
+                            <p style="margin-top: 1rem;"><strong>Interactive Comparison:</strong> processor-flow.html</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 4: Consumer Platforms</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>Key Findings</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div><strong>Amazon:</strong> Aggressive automatic opt-out (applied by default, uncheck to save)</div></li>
+                                <li><div class="bullet"></div><div><strong>Shopify:</strong> Explicit opt-in button (full control, but can only apply FULL balance - no partial)</div></li>
+                                <li><div class="bullet"></div><div><strong>Walmart:</strong> Hybrid - web is opt-in, mobile is automatic</div></li>
+                                <li><div class="bullet"></div><div><strong>Etsy:</strong> Opt-in checkbox with marketplace constraints</div></li>
+                                <li><div class="bullet"></div><div><strong>Best Buy:</strong> Opt-in with 60-day expiration</div></li>
+                            </ul>
+
+                            <h3>CRITICAL INSIGHTS</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>❌ <strong>NOBODY does partial credit application</strong> (can't use $20 of $50 balance)</div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>NOBODY has user preferences</strong> (no "always apply" or "never apply" settings)</div></li>
+                                <li><div class="bullet"></div><div>❌ <strong>NOBODY has invoice-specific control</strong></div></li>
+                            </ul>
+
+                            <h3>Recommendation for HCP</h3>
+                            <p>Opt-in with high visibility + add partial credit application (major B2B differentiator)</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-title">Agent 5: Current State at HCP</div>
+                            <div class="agent-toggle">▼</div>
+                        </div>
+                        <div class="agent-content">
+                            <h3>From Staging</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>❌ No native credits feature</div></li>
+                                <li><div class="bullet"></div><div>"Outstanding balance" field exists (for unpaid invoices, not credits)</div></li>
+                                <li><div class="bullet"></div><div>Payment method storage exists</div></li>
+                                <li><div class="bullet"></div><div>Invoice payment flow exists</div></li>
+                                <li><div class="bullet"></div><div>Private notes section is where pros manually track credits today</div></li>
+                            </ul>
+
+                            <h3>From Confluence/Jira</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Feature has been explicitly requested (XB-222, TSI-19)</div></li>
+                                <li><div class="bullet"></div><div>Support has documented workarounds ("no clean way" to do this today)</div></li>
+                                <li><div class="bullet"></div><div>QB integration pain is known (revenue/tax timing, credit memos)</div></li>
+                                <li><div class="bullet"></div><div>Multiple real-world use cases documented</div></li>
+                                <li><div class="bullet"></div><div>This is an OLD request (predates current research)</div></li>
+                            </ul>
+
+                            <h3>Current Workarounds (confirmed by Support docs)</h3>
+                            <ul class="findings-list">
+                                <li><div class="bullet"></div><div>Customer notes with CUSTOMER CREDIT tag</div></li>
+                                <li><div class="bullet"></div><div>Unscheduled jobs with credit as line item</div></li>
+                                <li><div class="bullet"></div><div>Manual tracking in Excel/notes</div></li>
+                                <li><div class="bullet"></div><div>Apply as discount on next invoice</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="insights" class="section">
+                <div class="section-header">
+                    <h2>Key Insights</h2>
+                    <p class="section-intro">Five critical insights emerge from the complete research picture.</p>
+                </div>
+
+                <div class="insight-grid">
+                    <div class="insight-card validated">
+                        <div class="insight-icon">✓</div>
+                        <h3>Demand is Validated</h3>
+                        <ul>
+                            <li>7 years of Facebook requests (2018-2025)</li>
+                            <li>897 Reforge snippets</li>
+                            <li>Multiple internal Jira tickets (XB-222, TSI-19)</li>
+                            <li>Support has documented the gap</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card competitive">
+                        <div class="insight-icon">⚔</div>
+                        <h3>Competitive Pressure</h3>
+                        <ul>
+                            <li>ServiceTitan has it (customers expect this)</li>
+                            <li>Service Fusion doesn't (you can beat them)</li>
+                            <li>Jobber has basic version (table stakes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card technical">
+                        <div class="insight-icon">⚙</div>
+                        <h3>Technical Path is Clear</h3>
+                        <ul>
+                            <li>Stripe is the only processor that supports this</li>
+                            <li>Use Stripe Customer Balance as storage layer</li>
+                            <li>Manage business logic in HCP layer</li>
+                            <li>Don't rely on Stripe's automatic behavior</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card opportunity">
+                        <div class="insight-icon">💡</div>
+                        <h3>Differentiation Opportunity</h3>
+                        <ul>
+                            <li>Partial credit application - NO consumer platform has this</li>
+                            <li>User preferences - NO consumer platform has this</li>
+                            <li>Multi-credit support - only Walmart does this</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-card impact">
+                        <div class="insight-icon">📊</div>
+                        <h3>Business Impact is Clear</h3>
+                        <ul>
+                            <li>Accounting reconciliation issues</li>
+                            <li>Customer satisfaction risk</li>
+                            <li>Administrative burden</li>
+                            <li>QB integration conflicts</li>
+                            <li>Churn risk</li>
+                            <li>Blocks referral programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="recommendations">
+                <h2 id="recommendations">Recommended Next Steps</h2>
+                <div class="rec-grid">
+                    <div class="rec-item">
+                        <div class="rec-number">01</div>
+                        <h3>Problem Statement</h3>
+                        <p>Use this research to draft:</p>
+                        <ul>
+                            <li>Problem: "HCP lacks mechanism to record and apply customer credits"</li>
+                            <li>Customer impact: Documented workarounds, accounting chaos, churn risk</li>
+                            <li>Business opportunity: Referral programs, retention, ServiceTitan parity</li>
+                            <li>Validation: 7 years external + multiple internal requests</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-item">
+                        <div class="rec-number">02</div>
+                        <h3>Solution Framing</h3>
+                        <p>Based on research:</p>
+                        <ul>
+                            <li>Pattern: Opt-in with high visibility</li>
+                            <li>Differentiators: Partial application + user preferences</li>
+                            <li>Technical: Stripe Customer Balance as storage, HCP manages logic</li>
+                            <li>QB sync: Bidirectional sync with QB credit memos</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-item">
+                        <div class="rec-number">03</div>
+                        <h3>Use Cases to Design For</h3>
+                        <p>From customer feedback:</p>
+                        <ul>
+                            <li>Overpayments (most common)</li>
+                            <li>Service mistakes/compensation</li>
+                            <li>Referral credits</li>
+                            <li>Prepayments/deposits</li>
+                            <li>Bulk B2B payments</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-item">
+                        <div class="rec-number">04</div>
+                        <h3>What NOT to Build</h3>
+                        <p>Avoid feature creep:</p>
+                        <ul>
+                            <li>Don't make credits expire (except promotional, clearly labeled)</li>
+                            <li>Don't rely solely on Stripe's automatic behavior</li>
+                            <li>Don't copy Amazon's aggressive automatic pattern</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section id="next-steps" class="cta-section">
+                <h2>Bottom Line</h2>
+                <p>You have more than enough research to move forward with confidence.</p>
+                <div class="cta-badges">
+                    <span class="badge">✓ Customer Demand VALIDATED</span>
+                    <span class="badge">✓ Competitive Context CLEAR</span>
+                    <span class="badge">✓ Technical Approach DEFINED</span>
+                    <span class="badge">✓ Differentiation IDENTIFIED</span>
+                    <span class="badge">✓ Business Impact DOCUMENTED</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Agent card expansion
+        document.querySelectorAll('.agent-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.closest('.agent-card');
+                card.classList.toggle('expanded');
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Expand first agent by default
+        document.querySelector('.agent-card').classList.add('expanded');
+    </script>
+</body>
+</html>
